@@ -178,7 +178,10 @@ def do_mesh(smd_mesh, tx_re, vert_re, e_re):
     for m, i in zip(mats, range(len(mats))):
         i3 = i * 3
         vs = verts[i3:i3+3]
-        f = bm.faces.new([a[0] for a in vs])
+        try:
+            f = bm.faces.new([a[0] for a in vs])
+        except:
+            continue
         bm.faces.index_update()
         f.material_index = mat_dict[m]
         for l, vdata in zip(f.loops, vs):

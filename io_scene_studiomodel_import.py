@@ -109,7 +109,7 @@ def prep_mesh(mesh, bm):
     bm.to_mesh(mesh)
     for i in sharp:
         mesh.edges[i].use_edge_sharp = True
-    mesh.show_edge_sharp = True
+    # mesh.show_edge_sharp = True
     mesh.update()
 
 def remap_groups(bm, remap_dict):
